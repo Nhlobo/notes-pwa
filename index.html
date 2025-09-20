@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notes PWA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h1>📝 Notes App (Offline PWA)</h1>
+  <p>Status: <span id="status"></span></p>
+
+  <textarea id="noteInput" placeholder="Write a note..."></textarea>
+  <button onclick="saveNote()">Save Note</button>
+
+  <h2>Saved Notes</h2>
+  <ul id="notesList"></ul>
+
+  <script src="app.js"></script>
+</body>
+</html>
