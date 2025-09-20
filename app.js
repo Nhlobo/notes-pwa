@@ -58,17 +58,21 @@ installBtn.addEventListener("click", async () => {
   deferredPrompt = null;
 });
 
+const BACKEND_URL = "https://backend-note-pwa-1.onrender.com/";
+
+// Fetch all notes from backend
 async function syncData() {
-  const response = await fetch("https://backend-note-pwa.onrender.com/");
+  const response = await fetch(BACKEND_URL);
   const data = await response.json();
   console.log("Synced data:", data);
 }
 
-// Example: add data to backend
-async function saveData(item) {
-  await fetch("https://backend-note-pwa.onrender.com/", {
+// Save note to backend
+async function saveData(note) {
+  await fetch(BACKEND_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ item }),
+    body: JSON.stringify(note)
   });
 }
+
