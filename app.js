@@ -57,3 +57,18 @@ installBtn.addEventListener("click", async () => {
   console.log("User choice:", outcome);
   deferredPrompt = null;
 });
+
+async function syncData() {
+  const response = await fetch("https://backend-note-pwa.onrender.com/");
+  const data = await response.json();
+  console.log("Synced data:", data);
+}
+
+// Example: add data to backend
+async function saveData(item) {
+  await fetch("https://backend-note-pwa.onrender.com/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ item }),
+  });
+}
